@@ -3,15 +3,15 @@
     <div class="logo">
       <h4>{{ title }}</h4>
     </div>
-    <ul class="navLinks">
+    <ul class="navLinks" v-bind:class="{ navActive: navActivity }">
       <li>
-        <router-link to="/">Home</router-link>
+        <router-link to="/"><span>Home</span></router-link>
       </li>
       <li>
-        <router-link to="/">Account</router-link>
+        <router-link to="/"><span>Account</span></router-link>
       </li>
     </ul>
-    <div class="burger">
+    <div class="burger" v-on:click="activeBorderNav">
       <div class="line1"></div>
       <div class="line2"></div>
       <div class="line3"></div>
@@ -24,8 +24,17 @@ export default {
   data() {
     return {
       title: this.$route.meta.title,
+      navActivity: false
     };
   },
+  methods: {
+    activeBorderNav(){
+      console.log (!this.navActivity)
+      this.navActivity = !this.navActivity
+      return this.navActivity
+
+    }
+  }
 };
 </script>
 
@@ -65,8 +74,15 @@ export default {
   font-weight: bold;
   font-size: 14px;
   display: block;
-  height: 100%;
   text-align: center;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navLinks span {
+  width: 100%;
 }
 
 .navLinks li:hover {
@@ -75,6 +91,7 @@ export default {
 
 .burger {
   display: none;
+  cursor: pointer;
 }
 
 .burger div {
@@ -103,16 +120,19 @@ export default {
     align-items: center;
     justify-content: flex-start;
     padding: 0;
+    width: 30%;
+    transform: translateX(100%);
+    transition: transform 0.5s ease-in;
   }
   .navLinks li {
-    width: 100%;
     height: 5%;
   }
-  .navLinks a {
+  .burger {
     display: block;
-    height: 100%;
-    text-align: center;
-    margin-top: 10px;
+    margin-left: 50%;
   }
+  .navActive {
+  transform: translateX(0%);
+}
 }
 </style>
