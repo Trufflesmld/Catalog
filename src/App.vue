@@ -5,5 +5,7 @@
 </template>
 
 <style>
-
+#app {
+  font-family: 'Oswald', sans-serif;
+}
 </style>

@@ -12,7 +12,8 @@ const routes = [
   {
     path: '/catalog',
     name: 'Catalog',
-    component: () => import( '@/views/Catalog.vue')
+    component: () => import( '@/views/Catalog.vue'),
+    meta: {title: "Directory of workers",}
   },
   {
     path: '/login',
@@ -27,7 +28,8 @@ const routes = [
   {
     path: '/tree',
     name: 'Tree',
-    component: () => import( '@/views/Tree.vue')
+    component: () => import( '@/views/Tree.vue'),
+    meta: {title: "Hierarchy of workers",}
   },
 ]
 
