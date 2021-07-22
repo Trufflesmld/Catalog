@@ -29,7 +29,6 @@ export default {
   },
   methods: {
     activeBorderNav(){
-      console.log (!this.navActivity)
       this.navActivity = !this.navActivity
       return this.navActivity
 
@@ -111,7 +110,7 @@ export default {
   .navLinks {
     position: absolute;
     right: 0px;
-    height: 92vh;
+    /*height: 92vh;*/
     top: 8vh;
     margin: 0;
     background-color: #005b8e;
@@ -120,19 +119,25 @@ export default {
     align-items: center;
     justify-content: flex-start;
     padding: 0;
-    width: 30%;
-    transform: translateX(100%);
-    transition: transform 0.5s ease-in;
+    width: 100%;
+    transform: translateY(0%); 
+    /*transition: transform 0.5s ease-in;*/
+    max-height: 0;
+    font-size: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: 0.5s all;
   }
   .navLinks li {
-    height: 5%;
+    height: 100%;
   }
   .burger {
     display: block;
     margin-left: 50%;
   }
   .navActive {
-  transform: translateX(0%);
+  max-height: 8vh;
+  opacity: 1;
 }
 }
 </style>
