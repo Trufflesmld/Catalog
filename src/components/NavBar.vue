@@ -24,16 +24,15 @@ export default {
   data() {
     return {
       title: this.$route.meta.title,
-      navActivity: false
+      navActivity: false,
     };
   },
   methods: {
-    activeBorderNav(){
-      this.navActivity = !this.navActivity
-      return this.navActivity
-
-    }
-  }
+    activeBorderNav() {
+      this.navActivity = !this.navActivity;
+      return this.navActivity;
+    },
+  },
 };
 </script>
 
@@ -44,7 +43,7 @@ export default {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  min-height: 8vh;
+  height: 8vh;
   background-color: #005b8e;
 }
 .logo {
@@ -120,9 +119,9 @@ export default {
     justify-content: flex-start;
     padding: 0;
     width: 100%;
-    transform: translateY(0%); 
+    transform: translateY(0%);
     /*transition: transform 0.5s ease-in;*/
-    max-height: 0;
+    height: 0;
     font-size: 0;
     opacity: 0;
     overflow: hidden;
@@ -133,11 +132,10 @@ export default {
   }
   .burger {
     display: block;
-    margin-left: 50%;
   }
   .navActive {
-  max-height: 8vh;
-  opacity: 1;
-}
+    height: 8vh;
+    opacity: 1;
+  }
 }
 </style>
