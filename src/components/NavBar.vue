@@ -45,6 +45,7 @@ export default {
   align-items: center;
   height: 8vh;
   background-color: #005b8e;
+  z-index: 5;
 }
 .logo {
   color: rgb(253, 251, 251);
