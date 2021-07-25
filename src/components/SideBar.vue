@@ -1,6 +1,6 @@
 <template>
   <div class="sideBar">
-    <div class="filters" :class="{filtersActive: filtersActivity}">
+    <div class="filters" :class="{ filtersActive: filtersActivity }">
       <div class="sorting">
         <span class="logo">Sorting</span>
       </div>
@@ -36,7 +36,6 @@ export default {
   },
 };
 </script>
-
 
 <style scoped>
 .sideBar {
@@ -97,8 +96,11 @@ export default {
 
 @media screen and (max-width: 768px) {
   .sorting {
-  border-bottom: solid 1px #005b8e;
-}
+    border-bottom: solid 1px #005b8e;
+  }
+  .searchInput {
+    height: 10%;
+  }
   .sideBar {
     position: fixed;
     left: 0;

@@ -181,8 +181,5 @@
     border: 0;
     margin-bottom: 16vh;
   }
-  .list{
-
-  }
 }
 </style>
