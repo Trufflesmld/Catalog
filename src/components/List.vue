@@ -158,6 +158,19 @@
   </div>
 </template>
 
+<script>
+import { mapGetters, mapActions } from "vuex";
+export default {
+  computed: {
+    ...mapGetters(["allWorkers"])
+  },
+  methods: mapActions(["fetchWorkersData"]),
+  mounted() {
+    this.fetchWorkersData();
+  }
+}
+</script>
+
 <style scoped>
 .listWrapper {
   position: relative;
