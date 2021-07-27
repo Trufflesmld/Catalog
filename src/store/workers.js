@@ -8,7 +8,6 @@ export default {
         .database()
         .ref("catalog")
         .on("value", function(snapshot) {
-          console.log(2);
           const data = snapshot.val();
           ctx.commit("updateWorkersData", data);
         });
